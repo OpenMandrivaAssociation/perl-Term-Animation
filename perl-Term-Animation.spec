@@ -1,7 +1,7 @@
 %define module  Term-Animation
 %define name	perl-%{module}
 %define version 2.4
-%define release %mkrel 5
+%define release %mkrel 6
 
 Name: 		%{name}
 Version: 	%{version}
