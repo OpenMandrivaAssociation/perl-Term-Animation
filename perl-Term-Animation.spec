@@ -1,22 +1,23 @@
-%define module  Term-Animation
-%define name	perl-%{module}
-%define version 2.4
-%define release %mkrel 6
+%define upstream_name    Term-Animation
+%define upstream_version 2.4
 
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary: 	ASCII sprite animation framework 
-License: 	GPL or Artistic
+License: 	GPL+ or Artistic
 Group: 		Development/Perl
-Source: 	http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/%{module}-%{version}.tar.bz2
-Url:            http://search.cpan.org/dist/%{module}
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
 BuildRequires:	perl(Curses)
+
 BuildArch: 	noarch
-BuildRoot: 	%{_tmppath}/%{name}-%{version}
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module provides a framework to produce sprite animations using ASCII art.
@@ -25,18 +26,18 @@ as an 'animation object'. An animation object can have a callback routine that
 controls the position and frame of the object.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
+%check
+%make test
+
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-
-%check
-make test
 
 %clean 
 rm -rf %{buildroot}
@@ -46,5 +47,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/Term
 %{_mandir}/*/*
-
-
