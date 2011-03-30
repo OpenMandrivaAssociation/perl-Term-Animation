@@ -1,5 +1,5 @@
 %define upstream_name    Term-Animation
-%define upstream_version 2.4
+%define upstream_version 2.6
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
