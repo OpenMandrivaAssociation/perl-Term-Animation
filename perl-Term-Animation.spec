@@ -43,4 +43,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 %check
 %make test
-l
+
