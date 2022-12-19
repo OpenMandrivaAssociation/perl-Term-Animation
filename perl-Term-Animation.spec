@@ -1,15 +1,12 @@
-%define upstream_name    Term-Animation
-%define upstream_version 2.6
-
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Name:		perl-Term-Animation
+Version:	2.6
+Release:	6
 
 Summary:	ASCII sprite animation framework 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		http://search.cpan.org/dist/Term-Animation
+Source0:	http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-%{version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Curses)
@@ -32,7 +29,7 @@ controls the position and frame of the object.
 #---------------------------------------------------------------------------
 
 %prep
-%autosetup -n %{upstream_name}-%{upstream_version}
+%autosetup -n Term-Animation-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
