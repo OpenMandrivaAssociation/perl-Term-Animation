@@ -5,7 +5,7 @@ Release:	6
 Summary:	ASCII sprite animation framework 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/Term-Animation
+Url:		https://search.cpan.org/dist/Term-Animation
 Source0:	http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-%{version}.tar.gz
 
 BuildRequires:	perl-devel
