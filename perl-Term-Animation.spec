@@ -8,6 +8,7 @@ Group:		Development/Perl
 Url:		https://search.cpan.org/dist/Term-Animation
 Source0:	http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-%{version}.tar.gz
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl(Curses)
 # tests
